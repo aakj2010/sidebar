@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react'
-import './Chapters.css'
-import Tab from './Tab';
-import Chapter1 from '../Chapters/Chapter1'
-import Chapter2 from '../Chapters/Chapter2'
-import Chapter5 from '../Chapters/Chapter5'
 import FontContext from '../context/FontContext';
-import SideBarContext  from '../context/SideBarContext';
+import SideBarContext from '../context/SideBarContext';
+import Tab from '../screen/Tab';
+import TamilQuran1 from './TamilQuran1';
 
+const TamilQuran = () => {
 
-function Quran({ open }) {
     let context = useContext(FontContext);
     let SideBarcontext = useContext(SideBarContext);
 
@@ -17,9 +14,9 @@ function Quran({ open }) {
     const handleTabClick = (index) => {
         setActiveTab(index);
     }
-   
-    return (
-        <>
+
+  return (
+    <>
             <div className='chapters'>
                 <div className='img-container' >
                     <div className="bottom-left" style={{ fontSize: `${context.fontSize}px` }}>Quran</div>
@@ -28,17 +25,17 @@ function Quran({ open }) {
                     <div className='tab-container' style={{ fontSize: `${context.fontSize}px` }}>
                         <div className='tabs' style={{ fontSize: `${context.fontSize}px` }}>
                             <Tab
-                                label="1.Victory upon victory"
+                                label="1. வெற்றிக்கு மேல் வெற்றி"
                                 isActive={activeTab === 0}
                                 onClick={() => handleTabClick(0)}
                             />
                             <Tab
-                                label="2.Pasu"
+                                label="2. பசு"
                                 isActive={activeTab === 1}
                                 onClick={() => handleTabClick(1)}
                             />
                             <Tab
-                                label="3.Imran's Family"
+                                label="3. இம்ரானின் குடும்பத்தினர்"
                                 isActive={activeTab === 2}
                                 onClick={() => handleTabClick(2)}
                             />
@@ -56,15 +53,15 @@ function Quran({ open }) {
                     </div>
                 </div>
                 <div className="tab-content" style={{ fontSize: `${context.fontSize}px` }}>
-                    {activeTab === 0 && <Chapter1 />}
-                    {activeTab === 1 && <Chapter2 />}
+                    {activeTab === 0 && <TamilQuran1 />}
+                    {activeTab === 1 && <TamilQuran1 />}
                     {activeTab === 2 && <p>Content for Tab 3</p>}
-                    {activeTab === 3 && <Chapter1 />}
-                    {activeTab === 4 && <Chapter5 />}
+                    {activeTab === 3 && <TamilQuran1 />}
+                    {activeTab === 4 && <TamilQuran1 />}
                 </div>
             </div>
         </>
-    )
+  )
 }
 
-export default Quran
+export default TamilQuran

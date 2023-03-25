@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
+import FontContext from '../context/FontContext'
 import notes from '../Assets/notes.svg'
 import bookmark from '../Assets/bookmark.svg'
 import more from '../Assets/more.svg'
-import FontContext from '../context/FontContext'
 
-function Chapter1() {
+const TamilQuran1 = () => {
     let context = useContext(FontContext)
     return (
         <>
@@ -18,7 +18,7 @@ function Chapter1() {
                             </button>
                         </div>
                     </div>
-                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>All glory be to Allah, the God of the worlds.</div>
+                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>நீயே அளவற்ற அருளாளன்; நிகரற்ற இரக்கமுடையவன்</div>
                     <div className='verse-link' style={{ fontSize: `${context.fontSize}px` }}>
                         <div className='verse-link-item' style={{ fontSize: `${context.fontSize}px` }}>2.26</div>
                         <div className='verse-link-item' style={{ fontSize: `${context.fontSize}px` }}>2.28</div>
@@ -34,10 +34,12 @@ function Chapter1() {
                             </button>
                         </div>
                     </div>
-                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>Most Benevolent, Merciful.</div>
+                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>நீயே அகிலங்களின்
+                        அதிபதி; நீயே அறிவிப்பவன்; நீயே
+                        வழிகாட்டுபவன்</div>
                     {/* <div className='verse-link'>
-       
-    </div> */}
+
+</div> */}
                 </div>
 
                 <div className='verse-container'>
@@ -49,10 +51,11 @@ function Chapter1() {
                             </button>
                         </div>
                     </div>
-                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>Master of the day’s Proceedings.</div>
+                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>நான் உன்னை கொண்டே
+                        திருப்தியடைகிறேன்.</div>
                     {/* <div className='verse-link'>
-        
-    </div> */}
+
+</div> */}
                 </div>
 
                 <div className='verse-container'>
@@ -64,10 +67,11 @@ function Chapter1() {
                             </button>
                         </div>
                     </div>
-                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>It is You who we obey; and You who we seek help.</div>
+                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>நீயே மன்னிப்பவன்;
+                        நீயே பிழை பொறுப்பவன்</div>
                     {/* <div className='verse-link'>
-        
-    </div> */}
+
+</div> */}
                 </div>
                 <div className='verse-container'>
                     <div className='verse-number' style={{ fontSize: `${context.fontSize}px` }}>
@@ -84,10 +88,11 @@ function Chapter1() {
                             </button>
                         </div>
                     </div>
-                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>Keep us on the right course.</div>
+                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>நீயே
+                        எனக்காகப் பொறுப்பேற்றுக் கொள்பவன்</div>
                     {/* <div className='verse-link'>
-        
-    </div> */}
+
+</div> */}
                 </div>
 
                 <div className='verse-container'>
@@ -99,17 +104,18 @@ function Chapter1() {
                             </button>
                         </div>
                     </div>
-                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>Keep us on the right course.</div>
+                    <div className='verse-text' style={{ fontSize: `${context.fontSize}px` }}>என்னை நீ
+                        நேர்வழியில் ஆக்குவாயாக.</div>
                     {/* <div className='verse-link'>
-        
-    </div> */}
+
+</div> */}
                 </div>
 
                 <div className='empty'></div>
             </div>
         </>
-
     )
 }
 
-export default Chapter1
+export default TamilQuran1
+

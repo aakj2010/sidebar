@@ -1,22 +1,20 @@
-import React, { useContext } from 'react'
-import FontContext from '../context/FontContext'
+import React from 'react'
 import Header from '../layout/Header'
 import './Preface.css'
 
-function Preface() {
-  let context = useContext(FontContext)
+const Home = () => {
   return (
     <>
       <Header />
-      <div className='preface' style={{ fontSize: `${context.fontSize}px` }}>
-        <div className='p-title' style={{ fontSize: `${context.fontSize}px` }}>Preface</div>
-        <p className='p-para' style={{ fontSize: `${context.fontSize}px` }}>On the home screen, you can browse your available textbooks and select one to start reading.
+      <div className='preface'>
+        <div className='p-title'>Home</div>
+        <p className='p-para'>On the home screen, you can browse your available textbooks and select one to start reading.
           You can also easily search for specific topics, keywords, or pages, as well as access your bookmarked
           pages and notes. In the textbook screen, you can navigate through the pages by swiping or tapping. The
           app allows you to highlight important information and take notes, making studying and learning more
           interactive and efficient. With Textbook Pro,
           you'll have all your textbooks in one convenient place, accessible anytime and anywhere.</p>
-        <p className='p-para' style={{ fontSize: `${context.fontSize}px` }}>On the home screen, you can browse your available textbooks and select one to start reading.
+        <p className='p-para'>On the home screen, you can browse your available textbooks and select one to start reading.
           You can also easily search for specific topics, keywords, or pages, as well as access your bookmarked
           pages and notes. In the textbook screen, you can navigate through the pages by swiping or tapping. The
           app allows you to highlight important information and take notes, making studying and learning more
@@ -27,4 +25,4 @@ function Preface() {
   )
 }
 
-export default Preface
+export default Home

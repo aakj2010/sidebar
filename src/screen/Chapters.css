@@ -20,6 +20,7 @@
   background-size: cover;
   display: flex;
   align-items: flex-end;
+  z-index: -1;
 }
 .bottom-left {
   width: 51px;
@@ -30,18 +31,17 @@
   font-size: 18px;
   line-height: 25px;
   color: #ffffff;
+  z-index: -1;
 }
+
 /* Chapter list strat */
 .chapters {
   box-sizing: border-box;
   width: 100vw;
-  /* height: 90vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* overflow-x: hidden;*/
-  /* overflow-y: scroll;  */
 }
 .chapters::-webkit-scrollbar {
   display: none;
@@ -51,18 +51,32 @@
   flex-direction: row;
   align-items: center;
   position: sticky;
-  top: 47px;
-  padding: 10px 0px;
+  /* z-index: -1; */
+  top: 48px;
+  /* padding: 10px 0px; */
   width: 100vw;
   height: 40px;
   overflow-x: scroll;
   scroll-behavior: smooth;
   overflow-y: hidden;
   background: #190041;
-  border-bottom: 0.5px solid #e7eaee;
+}
+.chapter-list-relative {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 40px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  background: #190041;
 }
 .chapter-list-wrapper::-webkit-scrollbar {
   display: none;
+}
+.chapter-list-wrapper::after{
+  visibility: hidden;
 }
 .chapter-list-items {
   display: flex;
@@ -72,6 +86,7 @@
   width: max-content;
   height: 40px;
   border-radius: 8px 8px 0px 0px;
+  /* z-index: -1; */
 }
 .chapter-list-items > li {
   list-style-type: none;
@@ -95,9 +110,9 @@
   color: #ffffff;
 }
 
-.active {
+/* .active {
   border-bottom: 3px solid #9a5aff;
-}
+} */
 /* Chapter list End */
 
 /* varse wrapper start */
@@ -165,6 +180,7 @@
 }
 .more-btn {
   display: flex;
+  margin-right: .75rem;
   align-items: center;
   justify-content: center;
   width: 20px;
@@ -221,4 +237,42 @@
 .empty {
   width: 100vw;
   height: 48px;
+}
+
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  width: max-content;
+  list-style-type: none;
+  text-decoration: none;
+  height: 40px;
+  font-family: "Nunito";
+  padding: 10px;
+  font-style: normal;
+  font-weight: 700;
+  /* font-size: 12px; */
+  color: #ffffff;
+}
+
+.tab.active {
+  border-bottom: 3px solid #9a5aff;
+}
+
+.tab-content {
+  padding: 10px;
+  border: 1px solid #ccc;
 }

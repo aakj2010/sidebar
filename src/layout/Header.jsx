@@ -1,46 +1,45 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './Header.css'
 import search from '../Assets/search.svg'
 import help from '../Assets/help.svg'
 import menu from '../Assets/menu.svg'
-import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import SideBar from './SideBar'
+import SideBarContext from '../context/SideBarContext'
 
 
 function Header() {
-    const navigate = useNavigate();
+    let SideBarcontext = useContext(SideBarContext);
 
-    const location = useLocation()
-    const title = location.pathname.split('/')
-        
-
-    const [open, setOpen] = useState(false)
-
-    const showSidebar = () => {
-        setOpen(!open)
-    }
+    const location = useLocation();
+    const result = location.pathname.split('/')
+    const title = result[2] ? result[2].charAt(0).toUpperCase() + result[2].slice(1) : result[1].charAt(0).toUpperCase() + result[1].slice(1)
 
     return (
         <>
             <header className='m-header-wrapper'>
                 <div className='menu-title'>
                     <div className='menu-btn-wrapper'>
-                        <button className='menu-btn' onClick={showSidebar}>
+                        <button className='menu-btn' onClick={SideBarcontext.showSidebar}>
                             <img src={menu} alt="menu" />
                             {
-                                open ? (
+                                SideBarcontext.open ? (
                                     <SideBar />
                                 ) : null
                             }
                         </button>
                     </div>
-                    <div className='title'>
-                            {title[1].replace(/^\s+|\s+$/gm,'')}
-                    </div>
+                    <div className='title'>{title}</div>
                 </div>
 
                 <div className='help-with-search'>
+                    <div className='menu-btn-wrapper'>
+                        <label className="switch">
+                            <input type="checkbox" onChange={() => SideBarcontext.setDarkMode(!SideBarcontext.darkMode)} checked />
+                            <span className="slider round"></span>
+                        </label>
+                    </div>
+
                     <div className='menu-btn-wrapper'>
                         <button className='menu-btn'>
                             <img src={help} alt="help" />
@@ -53,10 +52,6 @@ function Header() {
                     </div>
                 </div>
             </header>
-            {/* <div
-                className={sidebar ? "sidebar active" : "sidebar"}>
-                <SideBar sideBar={sidebar} showSidebar={showSidebar} />
-            </div> */}
         </>
     )
 }
